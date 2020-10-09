@@ -33,8 +33,6 @@ export class EmployeesViewComponent implements OnInit {
     this.data = Object.values(mapWithEmployees).filter( employee => !employee.managerId);
     this.data.forEach(employee => employee.children && employee.children.forEach(child => 
       this.populateChildren(child, mapWithEmployees)));
-    console.log(mapWithEmployees ); 
-    console.log(this.data ); 
   }
 
   populateChildren(employee: Employee, mapWithEmployees: { [key: number]: Employee; }): void {
